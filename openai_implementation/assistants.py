@@ -20,5 +20,23 @@ if run.status == 'completed':
   messages = client.beta.threads.messages.list(
     thread_id=thread.id
   )
-  for message in messages:
-    print(message.content)
+
+# Check if 'data' exists and is a list
+messages = getattr(messages, 'data', None)
+if not messages or not isinstance(messages, list):
+    print("No messages found!")
+
+# Iterate over each message
+for message in messages:
+    role = getattr(message, 'role', 'unknown').capitalize()
+    content_blocks = getattr(message, 'content', [])
+
+    print(f"Role: {role}")
+
+    # Extract and print text from content blocks
+    for block in content_blocks:
+        if getattr(block, 'type', None) == 'text':
+            text_content = getattr(block.text, 'value', None)
+            if text_content:
+                print(text_content)
+    print("-" * 80)
