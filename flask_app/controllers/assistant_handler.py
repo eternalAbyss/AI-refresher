@@ -1,23 +1,23 @@
 from services.openai_service import openai_service
-from prompts import prompts
 
 class assistant_handler:
     def __init__(self):
         self.openai_service = openai_service()
 
-    def create_assistant(self)->object:
-        """
-        Creates an assistant using the OpenAI API with the given instructions.
-        Args:
-            instructions (str): The instructions to be provided to the assistant.
-        Returns:
-            object: The created assistant object.
-        """
+# Legacy code
+    # def create_assistant(self)->object:
+    #     """
+    #     Creates an assistant using the OpenAI API with the given instructions.
+    #     Args:
+    #         instructions (str): The instructions to be provided to the assistant.
+    #     Returns:
+    #         object: The created assistant object.
+    #     """
 
-        sys_prompt = prompts().get_prompt('system_instructions')
-        print(sys_prompt)
-        assistant = self.openai_service.create_assistant(sys_prompt)
-        return assistant
+    #     sys_prompt = prompts().get_prompt('system_instructions')
+    #     print(sys_prompt)
+    #     assistant = self.openai_service.create_assistant(sys_prompt)
+    #     return assistant
 
     def create_thread(self)->object:
         """
