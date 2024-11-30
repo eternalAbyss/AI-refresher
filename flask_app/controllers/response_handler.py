@@ -14,6 +14,7 @@ class response_handler:
         messages = getattr(messages, 'data', None)
         if not messages or not isinstance(messages, list):
             print("No messages found!")
+        print(messages)
 
         responses = []
         # Iterate over each message
@@ -27,4 +28,4 @@ class response_handler:
                     if text_content:
                         responses.append(text_content)
 
-        return responses
+        return responses[0]

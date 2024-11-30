@@ -15,6 +15,7 @@ class assistant_handler:
         """
 
         sys_prompt = prompts().get_prompt('system_instructions')
+        print(sys_prompt)
         assistant = self.openai_service.create_assistant(sys_prompt)
         return assistant
 

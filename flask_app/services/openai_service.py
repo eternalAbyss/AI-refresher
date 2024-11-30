@@ -4,7 +4,6 @@ class openai_service:
 
     def __init__(self):
         self.client = OpenAI()
-        
 
     def create_assistant(self, instrcutions: str)->object:
         """
@@ -17,6 +16,8 @@ class openai_service:
         assistant = self.client.beta.assistants.create(
             name="Zenith Sama",
             instructions=instrcutions,
+            temperature=0.90,
+            top_p=0.75,
             model="gpt-4o-mini",
             )
         
