@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "Launch Flask App",
+            "program": "${workspaceFolder}/flask_app/main.py",
+            "env": {
+                "FLASK_APP": "${workspaceFolder}/flask_app/main.py",
+                "FLASK_ENV": "development"
+            },
+            "args": [
+                "run"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "mainFile",
+            "description": "Name of the main file to run"
+        }
+    ]
+}
